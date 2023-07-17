@@ -8,6 +8,7 @@ import { PassportModule } from '@nestjs/passport';
 import { JwtTokenModule } from './frameworks/jwt/jwt-token.module';
 import { DatabaseModule } from './config/database/database.module';
 import { UserModule } from './user/user.module';
+import { PaymentModule } from './payment/payment.module';
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import { UserModule } from './user/user.module';
     BcryptModule,
     DatabaseModule,
     UserModule,
+    PaymentModule,
   ],
   controllers: [],
   providers: [],
