@@ -82,7 +82,7 @@ export class Price {
       id: data.id,
       name: data.name,
       description: data.description,
-      cost: data.cost.description,
+      cost: data.cost,
       costType: data.costType,
     };
   }

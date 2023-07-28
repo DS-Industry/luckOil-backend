@@ -10,6 +10,5 @@ async function bootstrap() {
   await app.listen(process.env.PORT, () => {
     logger.log(`LuckOil back-end listening on port ${process.env.PORT}`);
   });
-
 }
 bootstrap();

@@ -28,7 +28,7 @@ export class CarWashRepository {
           { headers: headersReq },
         ),
       );
-      console.log(response.data);
+
       return response.data.map((loc) => {
         return Location.toLocation(loc);
       });
