@@ -1,8 +1,27 @@
 import { Module } from '@nestjs/common';
 import { DataBaseService } from './database.service';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { EnvironmentModule } from '../../environment/environment.module';
+import { EnvironmentService } from '../../environment/environment.service';
+import { Order } from '../../order/order.entity';
 
 @Module({
-  providers: [DataBaseService],
+  imports: [
+    TypeOrmModule.forRootAsync({
+      imports: [EnvironmentModule],
+      useFactory: (env: EnvironmentService) => ({
+        type: 'oracle',
+        host: env.getDBCredentials().host,
+        port: env.getDBCredentials().port,
+        username: env.getDBCredentials().username,
+        password: env.getDBCredentials().password,
+        sid: env.getDBCredentials().sid,
+        synchronize: false,
+        entities: [Order],
+      }),
+      inject: [EnvironmentService],
+    }),
+  ],
   exports: [],
 })
 export class DatabaseModule {}

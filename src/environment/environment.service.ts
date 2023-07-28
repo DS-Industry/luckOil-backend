@@ -20,4 +20,22 @@ export class EnvironmentService {
   public getJwtSecret(): string {
     return this.configService.get<string>('JWT_SECRET');
   }
+
+  public getDBCredentials() {
+    return {
+      host: this.configService.get<string>('DB_HOST'),
+      port: this.configService.get<number>('DB_PORT'),
+      sid: this.configService.get<string>('DB_SID'),
+      password: this.configService.get<string>('DB_PASSWORD'),
+      username: this.configService.get<string>('DB_USERNAME'),
+    };
+  }
+
+  public getDsCloudCredentials() {
+    return {
+      url: this.configService.get<string>('DS_CLOUD_URL'),
+      apiKey: this.configService.get<string>('DS_CLOUD_API_KEY'),
+      source: this.configService.get<number>('SOURCE'),
+    };
+  }
 }
