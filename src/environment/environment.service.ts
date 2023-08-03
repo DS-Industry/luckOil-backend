@@ -38,4 +38,8 @@ export class EnvironmentService {
       source: this.configService.get<number>('SOURCE'),
     };
   }
+
+  public getPaymentApiKey() {
+    return this.configService.get<string>('YOOKASS_APO_KEY_TEST');
+  }
 }

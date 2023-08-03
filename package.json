@@ -20,6 +20,7 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
+    "@a2seven/yoo-checkout": "^1.1.4",
     "@nestjs/axios": "^3.0.0",
     "@nestjs/common": "^10.0.0",
     "@nestjs/config": "^3.0.0",
@@ -33,14 +34,15 @@
     "bcrypt": "^5.1.0",
     "cross-env": "^7.0.3",
     "dotenv-cli": "^7.2.1",
-    "oracledb": "^6.0.3",
+    "oracledb": "^5.5.0",
     "passport": "^0.6.0",
     "passport-jwt": "^4.0.1",
     "passport-local": "^1.0.0",
     "pg": "^8.11.1",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.1",
-    "typeorm": "^0.3.17"
+    "typeorm": "^0.3.17",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@nestjs/cli": "^10.0.0",
