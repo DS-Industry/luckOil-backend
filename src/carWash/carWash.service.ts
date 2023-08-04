@@ -47,7 +47,7 @@ export class CarWashService {
 
     if (!result)
       throw new InternalServerErrorException(`Unable to start car wash`);
-
+    console.log(result);
     return 200;
   }
 }

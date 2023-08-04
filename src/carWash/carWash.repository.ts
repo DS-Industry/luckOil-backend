@@ -56,6 +56,7 @@ export class CarWashRepository {
 
   public async startCarWash(bayId: number, sum: number) {
     const headersReq: any = this.setHeaders(this.apiKey);
+
     const body = {
       GVLCardNum: '0',
       GVLCardSum: sum.toString(),
@@ -69,7 +70,6 @@ export class CarWashRepository {
           { headers: headersReq },
         ),
       );
-
       return response.data;
     } catch (e) {
       console.log(e);

@@ -39,7 +39,6 @@ export class OrderService {
 
     const createdOrder = await this.orderRepository.save(order);
 
-    //Ukassa verification
 
     //Send order
     try {

@@ -8,7 +8,7 @@ import { EnvironmentService } from '../environment/environment.service';
 @Injectable()
 export class PaymentService {
   private checkout;
-  constructor(private readonly env: EnvironmentService) {
+  constructor(env: EnvironmentService) {
     this.checkout = new YooCheckout({
       shopId: '500568',
       secretKey: env.getPaymentApiKey(),
