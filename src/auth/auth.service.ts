@@ -13,8 +13,8 @@ import { Repository } from 'typeorm';
 import { OTP_EXPIRY_TIME } from '../common/constants';
 import { IJwtTokenPayload } from '../common/interfaces/jwt-token-payload.interface';
 import { ConfigService } from '@nestjs/config';
-import { use } from 'passport';
 import { SmsProviderService } from './sms-provider.service';
+
 @Injectable()
 export class AuthService {
   constructor(

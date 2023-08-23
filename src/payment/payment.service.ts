@@ -1,5 +1,4 @@
-import { Inject, Injectable } from '@nestjs/common';
-import { PaymentToken } from './payment.provider';
+import { Injectable } from '@nestjs/common';
 import { YooCheckout, ICreatePayment } from '@a2seven/yoo-checkout';
 import { v4 as uuidv4 } from 'uuid';
 import { CreatePaymentDto } from './dto/req/create-payment-dto';
