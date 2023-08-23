@@ -4,6 +4,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { EnvironmentModule } from '../../environment/environment.module';
 import { EnvironmentService } from '../../environment/environment.service';
 import { Order } from '../../order/order.entity';
+import { User } from '../../user/user.entity';
+import { Otp } from '../../auth/entity/otp.entity';
 
 @Module({
   imports: [
@@ -17,7 +19,7 @@ import { Order } from '../../order/order.entity';
         password: env.getDBCredentials().password,
         sid: env.getDBCredentials().sid,
         synchronize: false,
-        entities: [Order],
+        entities: [Order, User, Otp],
       }),
       inject: [EnvironmentService],
     }),

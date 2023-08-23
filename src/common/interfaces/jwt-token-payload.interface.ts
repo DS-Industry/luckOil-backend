@@ -1,3 +1,3 @@
 export interface IJwtTokenPayload {
-  number: string;
+  phone: string;
 }

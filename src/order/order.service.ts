@@ -1,8 +1,9 @@
 import {
   BadRequestException,
-  Injectable, InternalServerErrorException,
-  NotFoundException
-} from "@nestjs/common";
+  Injectable,
+  InternalServerErrorException,
+  NotFoundException,
+} from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Order } from './order.entity';
 import { Repository } from 'typeorm';
@@ -38,7 +39,6 @@ export class OrderService {
     order.paymentId = paymentId;
 
     const createdOrder = await this.orderRepository.save(order);
-
 
     //Send order
     try {
