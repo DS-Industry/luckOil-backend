@@ -23,7 +23,7 @@ export class AuthController {
     return await this.authService.singIn(phone, otp);
   }
 
-  @Throttle(1, 60)
+  @Throttle(2, 60)
   @Post('/send/otp')
   async sendOtp(@Body() body: OtpReqDto) {
     const { phone } = body;
